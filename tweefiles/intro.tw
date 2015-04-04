@@ -1,17 +1,28 @@
 ::Start
-<<loadJS ReplaceMacros.min.js>>A [[lone figure|figure-look]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|cave-look]].
+A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
 
-::script [script]
-macros['loadJS'] =
-{
-	handler: function(place, object, parameters)
-	{
-		var se = document.createElement("script");
-		se.type = 'text/javascript';
-		se.src = parameters[0];
-		var hT = document.getElementsByTagName("HEAD")[0];
-		hT.appendChild(se);
-		if(se.innerText) {eval(se.innerText);}
-		else {eval(se.textContent);}
-	}
-}
+<<if $seenFigure and $seenCave>>
+After gathering your courage, you [[approach your teacher|approach]].
+<<endif>>
+
+::lookFigure
+You see the figure.<<set $seenFigure = 1>>
+[[« Back|previous()]]
+
+::lookCave
+You see craggy walls of the cave give way to smooth, chiseled stone at about shoulder-height.  The carved stone extends up above your head forming a domed ceiling.<<set $seenCave = 1>>
+[[« Back|previous()]]
+
+::approach
+You approach your teacher.  She calmly regards you in silence.  You are reluctant to meet her gaze, afraid that she is testing your patience.  She subtly moves an arm, gesturing for you to sit by the fire.
+
+You sit down.  Out of the corner of your eye, you catch movement among the shadows.  An "auroch"?  It can't be.  You would have smelled the beast long before entering the cave.  The shape is unmistakably an auroch, but it moves along the domed wall of the cave.  Your [[gaze is drawn up|gaze-up]].
+
+<<if $seenForeshadowing>>Before long the old shaman begins to [[speak|shaman-speak]].<<endif>>
+
+::gaze-up
+You see a bunch elements from the story.<<set $seenForeshadowing=true>>
+
+::shaman-speak
+The shaman speaks.  We [[go into the story|fable-start]].
+/% Link out to fable.tw %/

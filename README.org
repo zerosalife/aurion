@@ -1,2 +1,5 @@
 * Aurion and the Aurochs
 A text adventure.
+* Created Using Artisanal Macros From
+
+[[http://eturnerx.com/fot/The%2520Future%2520of%2520Twine.html#14][http://eturnerx.com/fot/The%20Future%20of%20Twine.html#14]]
