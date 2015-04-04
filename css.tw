@@ -1,0 +1,5 @@
+::stylesheet [stylesheet]
+
+.passage {
+         font-size:medium;
+}

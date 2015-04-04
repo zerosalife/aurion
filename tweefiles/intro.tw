@@ -1,9 +1,8 @@
 ::Start
 A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
-
-<<if $seenFigure and $seenCave>>
+/% BUILD <<if $seenFigure and $seenCave>> %/
 After gathering your courage, you [[approach your teacher|approach]].
-<<endif>>
+/% <<endif>> %/
 
 ::lookFigure
 You see the figure.<<set $seenFigure = 1>>
@@ -16,12 +15,24 @@ You see craggy walls of the cave give way to smooth, chiseled stone at about sho
 ::approach
 You approach your teacher.  She calmly regards you in silence.  You are reluctant to meet her gaze, afraid that she is testing your patience.  She subtly moves an arm, gesturing for you to sit by the fire.
 
-You sit down.  Out of the corner of your eye, you catch movement among the shadows.  An "auroch"?  It can't be.  You would have smelled the beast long before entering the cave.  The shape is unmistakably an auroch, but it moves along the domed wall of the cave.  Your [[gaze is drawn up|gaze-up]].
+You sit down.  Out of the corner of your eye, you catch movement among the shadows.
 
-<<if $seenForeshadowing>>Before long the old shaman begins to [[speak|shaman-speak]].<<endif>>
+An //[[auroch]]//?  It can't be.
+
+You would have smelled the beast long before entering the cave.
+
+The shape is unmistakably an auroch, but it moves along the domed wall of the cave.  Your [[gaze is drawn up|gaze-up]].
+/% BUILD <<if $seenForeshadowing>> %/
+Before long the old shaman begins to [[speak|shaman-speak]].
+/% <<endif>> %/
+
+::auroch
+A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their meat sustains the people.
+[[« Back|previous()]]
 
 ::gaze-up
 You see a bunch elements from the story.<<set $seenForeshadowing=true>>
+[[« Back|previous()]]
 
 ::shaman-speak
 The shaman speaks.  We [[go into the story|fable-start]].
