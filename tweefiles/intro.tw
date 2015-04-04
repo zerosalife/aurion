@@ -1,0 +1,17 @@
+::Start
+<<loadJS ReplaceMacros.min.js>>A [[lone figure|figure-look]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|cave-look]].
+
+::script [script]
+macros['loadJS'] =
+{
+	handler: function(place, object, parameters)
+	{
+		var se = document.createElement("script");
+		se.type = 'text/javascript';
+		se.src = parameters[0];
+		var hT = document.getElementsByTagName("HEAD")[0];
+		hT.appendChild(se);
+		if(se.innerText) {eval(se.innerText);}
+		else {eval(se.textContent);}
+	}
+}
