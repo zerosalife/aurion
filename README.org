@@ -3,3 +3,78 @@ A text adventure.
 * Created Using Artisanal Macros From
 
 [[http://eturnerx.com/fot/The%2520Future%2520of%2520Twine.html#14][http://eturnerx.com/fot/The%20Future%20of%20Twine.html#14]]
+* Microscope
+** Framing story f/ old shaman & initiate ✓
+** Aurion looking for food after long dark ×
+*** Flock of sheep grazing by watering hole ×
+**** Needs _REEDS_ for lashing or _ROPE_ ✓
+Take _REEDS_ from watering hole to make lashing for _SPEAR_ and _ROPE_
+**** Need _SHEEP MASK_ or _MUTTON_ ✓
+Make _SPEAR_ to kill SHEEP
+*** The great Wald: domain of the wolves ×
+**** Needs _STICK_ to make _SPEAR_ ✓
+Take _STICK_ to make _SPEAR_
+**** Needs _LOG_ to make _DEAD-FALL_ ✓
+*** Cave Bear's Cave ✓
+**** Needs _STONE_ to make _SPEAR HEAD_ ✓
+Take _STONE_ to make _SPEAR_
+**** Needs _STONE_ to make _HAND AXE_ ✓
+Take _STONE_ to make _HAND AXE_
+**** Need _BONE_ to create _DEAD-FALL_ to trap _AUROCH_ ✓
+Take _BONE_ from _CAVE_
+*** Aurochs by the cliffs
+**** Need to kill Aurochs for _MEAT_ ×
+Scare _AUROCHS_ off cliffs using _WOLF'S MASK_
+** Auroch killed by chasing off cliff ×
+*** Watering hole ✓
+**** Need rope to get down cliff ✓
+Gather rope to get down cliff
+**** Needs _REEDS_ for lashing or _ROPE_ ✓
+Take _REEDS_ from watering hole to make lashing for _SPEAR_ and _ROPE_
+*** River at base of cliff ✓
+**** Need to Make a _RAFT_ ✓
+Gather _DRIFT WOOD_ to make _RAFT_
+**** Need to feed people ×
+Bring home _RAW MEAT_
+** Auroch killed by luring it into cave ✓
+*** Cave bear's cave ✓
+
+**** Need to cook meat ✓
+Make a _ROASTING SPIT_ using _BONES_ in the cave.  Start fire in cave
+using the old incantations
+
+**** Need to feed people ✓
+Bring home cooked meat
+gathers the curing huerbs on the way home
+
+** Moral told from framing story with old shaman and initiate
+
+* Notes
+Aurion and the aurochs. Aurion was sent out to provide for the tribe
+one day after the long winter when the sun finally rose above the edge
+of the world. He saw a group of aurochsen by a cliff on his right. To
+his left there were some sheep grazing near a watering hole. Behind
+him there was a cave. To his front lay a Great Wald.  Aurion can
+construct a spear from a flint from the cave, a stick from the Wald,
+and reeds from the watering hole. He can use the spear to kill sheep
+resulting in a sheep skin/mask and meat, but not enough to feed the
+hungry ppl after the long dark. He can take the mutton to a wolf in
+the Wald or a cave bear in the cave. Giving the mutton to the wolf
+gives aurion a wolf mask that he can use to scare the aurochsen into
+running off the cliff. This leads to the bad ending where the player
+must make a rope from reeds, descended the cliff side and realize that
+it will be difficult to return home.  Aurion builds a raft to bring
+the meat home and sets out hoping the river will flow back to his
+ppl. If you bring the mutton to the cave bear she thanks you for
+feeding her. He leaves the cave to forage for more food, filled with
+energy after her hibernation. The cave is filled wth stuff to make a
+roasting spit. You can wear the sheep mask and invite the aurochs into
+te cave. If the player creates a deadfall in front of the door using a
+bone from the cave and a large tree from the Wald, the aurochs will be
+trapped allowing aurion to cook its meat, build a litter, and carry
+the meat home.
+
+The moral of the cave ending is tht we have many allies and proper
+bargaining with these allies can give us the tools to succeed. The
+moral of the cliff ending is that we are fierce but the
+straightforward option can lead to unforeseen hardship.

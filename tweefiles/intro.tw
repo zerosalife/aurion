@@ -1,8 +1,9 @@
 ::Start
-A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
-/% BUILD <<if $seenFigure and $seenCave>> %/
+<<set $debug = true;>>A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
+
+<<if ($seenFigure and $seenCave) or $debug>>
 After gathering your courage, you [[approach your teacher|approach]].
-/% <<endif>> %/
+<<endif>>
 
 ::lookFigure
 You see the figure.<<set $seenFigure = 1>>
@@ -22,9 +23,9 @@ An //[[auroch]]//?  It can't be.
 You would have smelled the beast long before entering the cave.
 
 The shape is unmistakably an auroch, but it moves along the domed wall of the cave.  Your [[gaze is drawn up|gaze-up]].
-/% BUILD <<if $seenForeshadowing>> %/
+<<if $seenForeshadowing or $debug>>
 Before long the old shaman begins to [[speak|shaman-speak]].
-/% <<endif>> %/
+<<endif>>
 
 ::auroch
 A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their meat sustains the people.
@@ -35,5 +36,6 @@ You see a bunch elements from the story.<<set $seenForeshadowing=true>>
 [[« Back|previous()]]
 
 ::shaman-speak
-The shaman speaks.  We [[go into the story|fable-start]].
+The shaman speaks.  [[We go into the story|fable-start]].
+<<set $hasReeds = 1; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasSpear = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0;>>
 /% Link out to fable.tw %/

@@ -1,0 +1,16 @@
+/% Link in from aurochs-cliffs in fable.tw %/
+::river
+There is drift wood on the bank of the river.
+
+The aurochs lies dead.
+
+There is raw meat here.
+
+There is a raft here.  [[Lash the meat to the raft and set off down the river|river-moral]].
+<<display "inventory">>
+
+::river-moral
+Aurion sets off on an uncertain journey down the river.
+
+Your teacher's story [[concludes|conclusion]].
+/% Link out to outro.tw %/

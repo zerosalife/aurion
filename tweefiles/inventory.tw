@@ -1,0 +1,8 @@
+/% More complex replace macro stuff will probably be necessary %/
+/% See: http://www.glorioustrainwrecks.com/node/5462 %/
+::inventory
+/% keep this line blank for spacing from passage %/
+<<if $hasReeds>>You can [[make rope|passage()][$hasRope = 1; $hasReeds = 0;]]<<endif>>\
+----
+<<if $hasReeds or $hasRope or $hasSpear or $hasSheepMask or $hasMutton or $hasStick or $hasSpear or $hasLog or $hasChert or $hasSpearHead or $hasHandAxe or $hasBone or $hasWolfMask or $hasDriftWood>>You have:<<endif>>
+<<if $hasReeds>> reeds <<endif>><<if $hasRope>> rope <<endif>>

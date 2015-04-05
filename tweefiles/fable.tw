@@ -3,7 +3,9 @@ The shaman begins the story, telling about [[Aurion|aurion-desc]].
 
 It was spring, Aurion could tell that the rains were coming soon because the [[lingberries]] were budding.
 
-Aurion enters the [[clearing]], searching for food for his people.
+After days of walking, wandering away from the people, in search of food, Aurion came across a [[clearing]] at the top of a hill.
+
+
 ::aurion-desc
 The shape of Aurion comes alive on the cave wall.  You've seen it before.
 
@@ -22,4 +24,63 @@ You can't be sure but you think the shape matches  the drawings on the dome of t
 The small fruits herald spring.  Their budding foretells rains that bring life back to the world following the cold death of winter.  During the winter, their hard shells make for poor sustenance, but the spring rains fill them with juice.  They are a sweet treat if you pick them after a storm.
 [[« Back|previous()]]
 
-::clearing
+:: clearing
+Aurion saw group of Aurochsen by [[the cliffs|aurochs-cliffs]] on his right.  To his left there were some sheep grazing near a [[watering hole|watering-hole]].  Behind him there was a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
+<<display "inventory">>
+
+:: watering-hole
+There are reeds here.
+
+Sheep are here.
+
+There is mutton here.
+
+There is a Sheep Mask here.
+
+There is a path up the hill back to the [[clearing]].
+<<display "inventory">>
+
+:: aurochs-cliffs
+There are aurochsen here.
+
+There is a rope tied to the cliff here.  [[Descend the cliff|river]].
+/% Link out to cliff-ending.tw %/
+There is a path back to the [[clearing]].
+<<display "inventory">>
+
+:: cave-exterior
+There is (a mother rock of) chert stone here.
+
+There is an [[entrance to the cave|cave-interior]] here.
+
+There is a path back to the [[clearing]].
+<<display "inventory">>
+
+:: cave-interior
+There are bones here.
+
+Cave Bear is here.
+
+There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].
+/% Link out to cave-ending.tw %/
+
+[[Leave the cave|cave-exterior]].
+<<display "inventory">>
+
+:: wald
+There are sticks littering the forest floor here.
+
+There are great old trees here.
+
+Press on, [[deeper into the Wald|deep-wald]].
+
+There is a path back to the [[clearing]].
+<<display "inventory">>
+
+:: deep-wald
+Wolf is here.
+
+There is a Wolf Mask here.
+
+The Wald thins out to the [[left|wald]].
+<<display "inventory">>
