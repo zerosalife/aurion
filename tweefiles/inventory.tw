@@ -1,8 +1,14 @@
 /% More complex replace macro stuff will probably be necessary %/
 /% See: http://www.glorioustrainwrecks.com/node/5462 %/
 ::inventory
-/% keep this line blank for spacing from passage %/
-<<if $hasReeds>>You can [[make rope|passage()][$hasRope = 1; $hasReeds = 0;]]<<endif>>\
+<<if $hasReeds or $hasRope or $hasSpear or $hasSheepMask or $hasMutton or $hasStick or $hasLog or $hasChert or $hasSpearHead or $hasHandAxe or $hasBone or $hasWolfMask or $hasDriftWood>>
+<<display "combinations">>
 ----
-<<if $hasReeds or $hasRope or $hasSpear or $hasSheepMask or $hasMutton or $hasStick or $hasSpear or $hasLog or $hasChert or $hasSpearHead or $hasHandAxe or $hasBone or $hasWolfMask or $hasDriftWood>>You have:<<endif>>
-<<if $hasReeds>> reeds <<endif>><<if $hasRope>> rope <<endif>>
+You have:<<endif>>
+<<if $hasReeds>> reeds <<endif>><<if $hasRope>><br>rope<<endif>><<if $hasSpear>><br>a spear<<endif>><<if $hasSheepMask>><br>the Sheep Mask<<endif>><<if $hasMutton>><br>mutton<<endif>><<if $hasStick>><br>a stick<<endif>><<if $hasLog>><br>a log<<endif>><<if $hasChert>><br>a piece of chert<<endif>><<if $hasSpearHead>><br>a spearhead<<endif>><<if $hasHandAxe>><br>a hand axe<<endif>><<if $hasBone>><br>a bone<<endif>><<if $hasWolfMask>><br>the Wolf Mask<<endif>><<if $hasDriftWood>><br>drift wood<<endif>>
+
+::combinations
+<<if $hasReeds>><br>You can [[make rope|passage()][$hasRope = 1; $hasReeds = 0;]]<<endif>>\
+<<if $hasRope and $hasSpearHead and $hasStick>><br>You can [[make a spear|passage()][$hasSpear = 1; $hasRope = 0; $hasSpearHead = 0; $hasStick = 0;]]<<endif>>\
+<<if $hasChert>><br>You can [[fashion a spear head|passage()][$hasSpearHead = 1; $hasChert = 0;]]<<endif>>\
+<<if $hasChert>><br>You can [[fashion a hand axe|passage()][$hasHandAxe = 1; $hasChert = 0;]]<<endif>>\
