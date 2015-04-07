@@ -25,36 +25,65 @@ The small fruits herald spring.  Their budding foretells rains that bring life b
 [[« Back|previous()]]
 
 :: clearing
-Aurion saw group of Aurochsen by [[the cliffs|aurochs-cliffs]] on his right.  To his left there were some sheep grazing near a [[watering hole|watering-hole]].  Behind him there was a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
+Aurion saw <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on his right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on his right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on his right.<<endif>>  To his left there were some sheep grazing near a [[watering hole|watering-hole]].  Behind him there was a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
 <<display "inventory">>
 
 :: watering-hole
-There are reeds here.
+There are reeds here.  [[Pick some reeds|take-reeds]].
 
-Sheep are here.
-
-There is mutton here.
-
-There is a Sheep Mask here.
+Sheep are here.  <<if $hasSpear>>[[Hunt the sheep|hunt-sheep]].<<endif>>
 
 There is a path up the hill back to the [[clearing]].
 <<display "inventory">>
 
-:: aurochs-cliffs
-There are aurochsen here.
+::take-reeds
+You pick some some reeds, <<print either("carefully avoiding the sharp points of the brambles that grow nearby", "carefully avoiding the dried old reeds that did not survive the Long Dark")>>.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasReeds = 1;>>
 
-There is a rope tied to the cliff here.  [[Descend the cliff|river]].
-/% Link out to cliff-ending.tw %/
+::hunt-sheep
+There is mutton here.  [[Take the mutton|take-mutton]].
+
+There is a Sheep Mask here.
+[[« Back|previous()]]
+<<display "inventory">>
+
+:: aurochs-cliffs
+There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>>
+
 There is a path back to the [[clearing]].
 <<display "inventory">>
 
+::scare-aurochsen
+<<if not visited()>>You stand up at the last second scaring them into a stampede with nowhere to go but off the cliff.<<endif>>
+
+<<if $hasRope>>You could [[tie a rope here|rope-cliff]] to descend the cliffside.<<endif>>
+
+There is a path back to the [[clearing]].
+<<display "inventory">>
+<<if not visited()>><<set $scaredAurochsen = 1;>><<endif>>
+
+::rope-cliff
+There is a rope tied to the cliff here.  [[Descend the cliff|river]].
+<<display "inventory">>
+<<if not visited()>><<set $tiedRope = 1;>><<endif>>
+/% Link out to cliff-ending.tw %/
+
 :: cave-exterior
-There is (a mother rock of) chert stone here.
+There is (a mother rock of) chert stone here.  [[Calve the stone|take-chert]].
 
 There is an [[entrance to the cave|cave-interior]] here.
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
+
+:: take-chert
+You break off a small piece of raw chert <<print either("from the obsidian stone", "with some effort").
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasChert = 1;>>
+
 
 :: cave-interior
 There are bones here.
