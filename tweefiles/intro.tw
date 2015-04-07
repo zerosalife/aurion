@@ -37,5 +37,5 @@ You see a bunch elements from the story.<<set $seenForeshadowing=true>>
 
 ::shaman-speak
 The shaman speaks.  [[We go into the story|fable-start]].
-<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0;>>
+<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0; $hasDeadFall = 0;>>
 /% Link out to fable.tw %/

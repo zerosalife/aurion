@@ -79,22 +79,28 @@ There is a path back to the [[clearing]].
 <<display "inventory">>
 
 :: take-chert
-You break off a small piece of raw chert <<print either("from the obsidian stone", "with some effort").
+You break off a small piece of raw chert <<print either("exposing the glossy obsidian stone", "with some effort").
 [[« Back|previous()]]
 <<display "inventory">>
 <<set $hasChert = 1;>>
 
 
 :: cave-interior
-There are bones here.
+There are bones here.  [[Take a bone|take-bone]].
 
 Cave Bear is here.
 
-There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].
+<<if $hasLog and $hasBone and not $hasDeadFall>>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][set $hasDeadFall = 1; set $hasLog = 0; set $hasBone = 0;]].<<endif>><<if $hasDeadFall>>There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].
 /% Link out to cave-ending.tw %/
 
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
+
+::take-bone
+You take a bone from the pile at the side of the cave.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasBone = 1;>>
 
 :: wald
 There are sticks littering the forest floor here.
