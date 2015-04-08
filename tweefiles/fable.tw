@@ -44,8 +44,7 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 
 ::hunt-sheep
 There is mutton here.  [[Take the mutton|take-mutton]].
-
-There is a Sheep Mask here.
+<<if not $hasSheepMask>><br>There is a Sheep Mask here.  [[Take the Sheep Mask|passage()][set $hasSheepMask = 1;]]
 [[« Back|previous()]]
 <<display "inventory">>
 
@@ -79,7 +78,7 @@ There is a path back to the [[clearing]].
 <<display "inventory">>
 
 :: take-chert
-You break off a small piece of raw chert <<print either("exposing the glossy obsidian stone", "with some effort").
+You break off a small piece of raw chert <<print either("exposing the glossy obsidian stone", "with some effort")>>.
 [[« Back|previous()]]
 <<display "inventory">>
 <<set $hasChert = 1;>>
@@ -103,7 +102,7 @@ You take a bone from the pile at the side of the cave.
 <<set $hasBone = 1;>>
 
 :: wald
-There are sticks littering the forest floor here.
+There are sticks littering the forest floor here.  [[Pick up a stick|take-stick]]
 
 There are great old trees here.
 
@@ -111,6 +110,12 @@ Press on, [[deeper into the Wald|deep-wald]].
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
+
+::take-stick
+You take a stick from the forest floor.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasStick = 1;>>
 
 :: deep-wald
 Wolf is here.
