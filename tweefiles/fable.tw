@@ -43,25 +43,36 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<set $hasReeds = 1;>>
 
 ::hunt-sheep
-There is mutton here.  [[Take the mutton|take-mutton]].
-<<if not $hasSheepMask>><br>There is a Sheep Mask here.  [[Take the Sheep Mask|passage()][set $hasSheepMask = 1;]]
+<<if not $hasMutton>>There is mutton here.  [[Take the mutton|passage()][$hasMutton = 1;]].<<if $hasMutton>>The unused organs of the sheep remain.<<endif>>
+<<if not $hasSheepMask>><br>There is a Sheep Mask here.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
 [[« Back|previous()]]
 <<display "inventory">>
 
 :: aurochs-cliffs
-There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>>
+There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
 
 ::scare-aurochsen
-<<if not visited()>>You stand up at the last second scaring them into a stampede with nowhere to go but off the cliff.<<endif>>
-
+<<if visited() == 1>>You stand up at the last second scaring them into a stampede with nowhere to go but off the cliff.<<endif>>
 <<if $hasRope>>You could [[tie a rope here|rope-cliff]] to descend the cliffside.<<endif>>
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
 <<if not visited()>><<set $scaredAurochsen = 1;>><<endif>>
+
+::cave-aurochsen
+<<if not $caveBearGone>><<display "cave-bear-scare-aurochsen">><<else if $caveBearGone and not $hasDeadFall>><<display "escape-aurochsen">><<else if $caveBearGone and $hasDeadFall>><<display "deadfall-aurochsen"<<endif>>
+
+::cave-bear-scare-aurochsen
+The aurochsen is scared away by the cavebear.
+
+::escape-aurochsen
+The aurochs escapes.
+
+::deadfall-aurochsen
+The deadfall trap kills the aurochs.
 
 ::rope-cliff
 There is a rope tied to the cliff here.  [[Descend the cliff|river]].
@@ -87,11 +98,8 @@ You break off a small piece of raw chert <<print either("exposing the glossy obs
 :: cave-interior
 There are bones here.  [[Take a bone|take-bone]].
 
-Cave Bear is here.
-
-<<if $hasLog and $hasBone and not $hasDeadFall>>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][set $hasDeadFall = 1; set $hasLog = 0; set $hasBone = 0;]].<<endif>><<if $hasDeadFall>>There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].
+<<if not $caveBearGone>>Cave Bear is here.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].<<endif>>
 /% Link out to cave-ending.tw %/
-
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
 
@@ -101,10 +109,18 @@ You take a bone from the pile at the side of the cave.
 <<display "inventory">>
 <<set $hasBone = 1;>>
 
-:: wald
-There are sticks littering the forest floor here.  [[Pick up a stick|take-stick]]
+::bear-mutton
+Cave Bear thanks you and takes the mutton.  "Now I have enough energy to go out and forage for more food."  Cave Bear lumbers out of the entrance to the cave.
 
-There are great old trees here.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasMutton = 0;>>
+
+
+:: wald
+There are sticks littering the forest floor here.  [[Pick up a stick|take-stick]].
+
+There are great old trees here.<<if $hasHandAxe>>  [[Cut down a tree|take-log]].<<endif>>
 
 Press on, [[deeper into the Wald|deep-wald]].
 
@@ -117,10 +133,23 @@ You take a stick from the forest floor.
 <<display "inventory">>
 <<set $hasStick = 1;>>
 
-:: deep-wald
-Wolf is here.
+::take-log
+Using the hand axe, you cut down one of the old trees.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasLog = 1;>>
 
-There is a Wolf Mask here.
+
+:: deep-wald
+Wolf is here.<<if $hasMutton and not $hasWolfMask>>  Wolf's glance drifts to the mutton you are carrying.  You can almost see the greedy thoughts running through Wolf's mind.  [[Offer Wolf the mutton|wolf-mutton]].<<endif>>
 
 The Wald thins out to the [[left|wald]].
 <<display "inventory">>
+
+::wolf-mutton
+Wolf thanks you and takes the mutton.  "In return, you may wear my skin."
+
+Wolf gives you the Wolf Mask.
+[[« Back|previous()]]
+<<display "inventory">>
+<<set $hasMutton = 0; $hasWolfMask = 1;>>
