@@ -49,7 +49,7 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<display "inventory">>
 
 :: aurochs-cliffs
-There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]
+There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]<<endif>>
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
@@ -63,16 +63,18 @@ There is a path back to the [[clearing]].
 <<if not visited()>><<set $scaredAurochsen = 1;>><<endif>>
 
 ::cave-aurochsen
-<<if not $caveBearGone>><<display "cave-bear-scare-aurochsen">><<else if $caveBearGone and not $hasDeadFall>><<display "escape-aurochsen">><<else if $caveBearGone and $hasDeadFall>><<display "deadfall-aurochsen"<<endif>>
+<<if not $caveBearGone>><<display "cave-bear-scare-aurochsen">><<else if $caveBearGone and not $hasDeadFall>><<display "escape-aurochsen">><<else if $caveBearGone and $hasDeadFall>><<display "deadfall-aurochsen">><<endif>>
 
 ::cave-bear-scare-aurochsen
-The aurochsen is scared away by the cavebear.
+The aurochsen is scared away by the cavebear.  [[You take the mask off|cave-interior]].
 
 ::escape-aurochsen
-The aurochs escapes.
+The aurochs escapes out of the mouth of the cave.  [[You take off the mask, thinking there may be some way to trap the aurochs inside|cave-interior]].
 
 ::deadfall-aurochsen
-The deadfall trap kills the aurochs.
+The deadfall trap kills the aurochs.  [[You take off the mask|cave-trapped]].
+/% Link out to cave-ending.tw %/
+
 
 ::rope-cliff
 There is a rope tied to the cliff here.  [[Descend the cliff|river]].
@@ -98,8 +100,7 @@ You break off a small piece of raw chert <<print either("exposing the glossy obs
 :: cave-interior
 There are bones here.  [[Take a bone|take-bone]].
 
-<<if not $caveBearGone>>Cave Bear is here.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.  [[Use the deadfall trap on aurochs|cave-trapped]].<<endif>>
-/% Link out to cave-ending.tw %/
+<<if not $caveBearGone>>Cave Bear is here.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.<<endif>>
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
 

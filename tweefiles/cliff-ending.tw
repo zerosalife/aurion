@@ -1,16 +1,16 @@
 /% Link in from aurochs-cliffs in fable.tw %/
 ::river
-There is drift wood on the bank of the river.
+There is drift wood on the bank of the river.<<if $hasRope>>  [[You build a raft with some of the driftwood|passage()][$hasRaft = 1;]].<<else>>  If you had rope you could build a raft with some of the driftwood.<<endif>>
 
-The aurochs lies dead.
+The aurochs lies dead.  The meat on its bones will spoil soon.
 
-There is raw meat here.
-
-There is a raft here.  [[Lash the meat to the raft and set off down the river|river-moral]].
+<<if $hasRaft>><br>There is a raft here.  [[You carefully dress and clean the aurochs, lashing the meat to the raft and set off down the river|river-moral]].<<endif>>
 <<display "inventory">>
 
 ::river-moral
 Aurion sets off on an uncertain journey down the river.
+
+Your teacher tells you a meaningful moral.
 
 Your teacher's story [[concludes|conclusion]].
 /% Link out to outro.tw %/
