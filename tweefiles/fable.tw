@@ -3,7 +3,7 @@ The shaman begins the story, telling about [[Aurion|aurion-desc]].
 
 It was spring, Aurion could tell that the rains were coming soon because the [[lingberries]] were budding.
 
-After days of walking, wandering away from the people, in search of food, Aurion came across a [[clearing]] at the top of a hill.
+After days of walking, wandering away from the people, in search of food, Aurion, worn out and hungry, came across a [[clearing]] at the top of a hill.
 
 
 ::aurion-desc
@@ -11,13 +11,13 @@ The shape of Aurion comes alive on the cave wall.  You've seen it before.
 
 Late at night when the moon is dead and your teacher taught you to look for the brightest star in the eastern sky, where the sun will rise.
 
-This is [[Aurion's Shoulder|aruion-shoulder]], glistening among the heavens.
+This is [[Aurion's Shoulder|aurion-shoulder]], glistening among the heavens.
 [[« Back|previous()]]
 
 ::aurion-shoulder
 Aurion's shape is defined by several stars starting with the brightest star on his right shoulder.
 
-You can't be sure but you think the shape matches  the drawings on the dome of the cave.
+You can't be sure but you think the shape matches the drawings on the dome of the cave.
 [[« Back|fable-start]]
 
 ::lingberries
@@ -25,13 +25,13 @@ The small fruits herald spring.  Their budding foretells rains that bring life b
 [[« Back|previous()]]
 
 :: clearing
-Aurion saw <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on his right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on his right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on his right.<<endif>>  To his left there were some sheep grazing near a [[watering hole|watering-hole]].  Behind him there was a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
+You see <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on your right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on your right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on your right.<<endif>>  To your left there are some sheep grazing near a [[watering hole|watering-hole]].  Behind you there is a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
 <<display "inventory">>
 
 :: watering-hole
-There are reeds here.  [[Pick some reeds|take-reeds]].
+Six-winged insects flit around reeds growing by the water here.  [[Pick some reeds|take-reeds]].
 
-Sheep are here.  <<if $hasSpear>>[[Hunt the sheep|hunt-sheep]].<<endif>>
+A flock of sheep grazes nearby.  <<if $hasSpear>>[[Hunt the sheep|hunt-sheep]].<<endif>>
 
 There is a path up the hill back to the [[clearing]].
 <<display "inventory">>
@@ -43,22 +43,21 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<set $hasReeds = 1;>>
 
 ::hunt-sheep
-<<if not $hasMutton>>There is mutton here.  [[Take the mutton|passage()][$hasMutton = 1;]].<<if $hasMutton>>The unused organs of the sheep remain.<<endif>>
-<<if not $hasSheepMask>><br>There is a Sheep Mask here.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
+<<if not $hasMutton>>You carve and dress the sheep.  [[Take the mutton|passage()][$hasMutton = 1;]].<<if $hasMutton>>The unused organs of the sheep remain.<<endif>><<if not $hasSheepMask>><br>Using the old ways, you prepare a Sheep Mask from the remains.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
 [[« Back|previous()]]
 <<display "inventory">>
 
 :: aurochs-cliffs
-There are aurochsen here.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]<<endif>>
+Just over a rise, grazing at the near the cliff's edge, you see a herd of aurochsen.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]<<endif>>
 
-There is a path back to the [[clearing]].
+There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
 
 ::scare-aurochsen
-<<if visited() == 1>>You stand up at the last second scaring them into a stampede with nowhere to go but off the cliff.<<endif>>
-<<if $hasRope>>You could [[tie a rope here|rope-cliff]] to descend the cliffside.<<endif>>
+<<if visited() == 1>>You stand up at the last second scaring the aurochsen into a stampede with nowhere to go but off the cliff.<<endif>>
+<<if not $hasRope>>There is a curved rock by the cliff's edge.  You think you could tie a rope and descend the cliffside.  <<if $hasRope>>You could [[tie a rope to the curved rock by the cliff's edge|rope-cliff]] to descend the cliffside.<<endif>>
 
-There is a path back to the [[clearing]].
+There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
 <<if not visited()>><<set $scaredAurochsen = 1;>><<endif>>
 
@@ -66,18 +65,18 @@ There is a path back to the [[clearing]].
 <<if not $caveBearGone>><<display "cave-bear-scare-aurochsen">><<else if $caveBearGone and not $hasDeadFall>><<display "escape-aurochsen">><<else if $caveBearGone and $hasDeadFall>><<display "deadfall-aurochsen">><<endif>>
 
 ::cave-bear-scare-aurochsen
-The aurochsen is scared away by the cavebear.  [[You take the mask off|cave-interior]].
+The aurochs is scared away by the cavebear.  [[You take off the mask|cave-interior]].
 
 ::escape-aurochsen
 The aurochs escapes out of the mouth of the cave.  [[You take off the mask, thinking there may be some way to trap the aurochs inside|cave-interior]].
 
 ::deadfall-aurochsen
-The deadfall trap kills the aurochs.  [[You take off the mask|cave-trapped]].
+The aurochs steps inside the cave entrance, shin glancing off of the bone supporting the deadfall trap.  The log above teeters, then falls, crushing the enormous animal.  [[You take off the mask|cave-trapped]].
 /% Link out to cave-ending.tw %/
 
 
 ::rope-cliff
-There is a rope tied to the cliff here.  [[Descend the cliff|river]].
+There is a rope tied to the a curved stone by the edge of the cliff.  [[Descend the cliff|river]].
 <<display "inventory">>
 <<if not visited()>><<set $tiedRope = 1;>><<endif>>
 /% Link out to cliff-ending.tw %/
