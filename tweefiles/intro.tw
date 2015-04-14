@@ -32,7 +32,7 @@ A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their me
 [[« Back|previous()]]
 
 ::gaze-up
-You see a bunch elements from the story.<<set $seenForeshadowing=true>>
+In the flickering firelight, you see painted images of the great beasts of old.  You see a bunch elements from the story.<<set $seenForeshadowing=true>>
 [[« Back|previous()]]
 
 ::shaman-speak

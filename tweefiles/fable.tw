@@ -25,7 +25,13 @@ The small fruits herald spring.  Their budding foretells rains that bring life b
 [[« Back|previous()]]
 
 :: clearing
-You see <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on your right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on your right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on your right.<<endif>>  To your left there are some sheep grazing near a [[watering hole|watering-hole]].  Behind you there is a [[cave|cave-exterior]].  In front of him lay a [[Great Wald|wald]].
+You see <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on your right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on your right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on your right.<<endif>>
+
+To your left there are some sheep grazing near a [[watering hole|watering-hole]].
+
+Behind you there is a [[cave|cave-exterior]].
+
+In front of you lies a [[Great Wald|wald]].
 <<display "inventory">>
 
 :: watering-hole
@@ -43,7 +49,7 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<set $hasReeds = 1;>>
 
 ::hunt-sheep
-<<if not $hasMutton>>You carve and dress the sheep.  [[Take the mutton|passage()][$hasMutton = 1;]].<<if $hasMutton>>The unused organs of the sheep remain.<<endif>><<if not $hasSheepMask>><br>Using the old ways, you prepare a Sheep Mask from the remains.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
+<<if not $hasMutton>>You carve and dress the sheep.  [[Take the mutton|passage()][$hasMutton = 1;]].<<endif>><<if $hasMutton>>The unused organs of the sheep remain.<<endif>><<if not $hasSheepMask>><br>Using the old ways, you prepare a Sheep Mask from the remains.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
 [[« Back|previous()]]
 <<display "inventory">>
 
@@ -55,7 +61,7 @@ There is a path down the rise back to the [[clearing]].
 
 ::scare-aurochsen
 <<if visited() == 1>>You stand up at the last second scaring the aurochsen into a stampede with nowhere to go but off the cliff.<<endif>>
-<<if not $hasRope>>There is a curved rock by the cliff's edge.  You think you could tie a rope and descend the cliffside.  <<if $hasRope>>You could [[tie a rope to the curved rock by the cliff's edge|rope-cliff]] to descend the cliffside.<<endif>>
+<<if not $hasRope>>There is a curved rock by the cliff's edge.  You think you could tie a rope and descend the cliffside.<<else>>You could [[tie a rope to the curved rock by the cliff's edge|rope-cliff]] to descend the cliffside.<<endif>>
 
 There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
