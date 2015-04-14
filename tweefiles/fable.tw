@@ -82,29 +82,29 @@ There is a rope tied to the a curved stone by the edge of the cliff.  [[Descend 
 /% Link out to cliff-ending.tw %/
 
 :: cave-exterior
-There is (a mother rock of) chert stone here.  [[Calve the stone|take-chert]].
+You notice the faint sparks of a dark obsidian rock reflecting the sunlight.  It peaks out of the grey stone near the cave.  You recognize it as a mother rock of chert stone.  [[Calve the stone|take-chert]].
 
-There is an [[entrance to the cave|cave-interior]] here.
+You feel cool air coming from the [[entrance to the cave|cave-interior]].
 
 There is a path back to the [[clearing]].
 <<display "inventory">>
 
 :: take-chert
-You break off a small piece of raw chert <<print either("exposing the glossy obsidian stone", "with some effort")>>.
+Taking a nearby stone in your hand, you break off a small piece of raw chert <<print either("exposing the glossy obsidian stone", "with some effort")>>.
 [[« Back|previous()]]
 <<display "inventory">>
 <<set $hasChert = 1;>>
 
 
 :: cave-interior
-There are bones here.  [[Take a bone|take-bone]].
+Off to the side of the cave, there are remains from years of carcasses.   [[Take a bone|take-bone]].
 
-<<if not $caveBearGone>>Cave Bear is here.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.<<endif>>
+<<if not $caveBearGone>>Cave Bear, a hulking creature, fur matted from hibernating through the long dark, rises when you enter the cave with a long sigh.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.<<endif>>
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
 
 ::take-bone
-You take a bone from the pile at the side of the cave.
+You take a bone from the remains at the side of the cave.
 [[« Back|previous()]]
 <<display "inventory">>
 <<set $hasBone = 1;>>
@@ -118,9 +118,9 @@ Cave Bear thanks you and takes the mutton.  "Now I have enough energy to go out 
 
 
 :: wald
-There are sticks littering the forest floor here.  [[Pick up a stick|take-stick]].
+Sticks litter the forest floor here.  [[Pick up a stick|take-stick]].
 
-There are great old trees here.<<if $hasHandAxe>>  [[Cut down a tree|take-log]].<<endif>>
+The great old trees of the Wald grow like monuments with roots arrayed like supined worshipers around their bases.<<if $hasHandAxe>>  [[Cut down a tree|take-log]].<<endif>>
 
 Press on, [[deeper into the Wald|deep-wald]].
 
@@ -141,7 +141,7 @@ Using the hand axe, you cut down one of the old trees.
 
 
 :: deep-wald
-Wolf is here.<<if $hasMutton and not $hasWolfMask>>  Wolf's glance drifts to the mutton you are carrying.  You can almost see the greedy thoughts running through Wolf's mind.  [[Offer Wolf the mutton|wolf-mutton]].<<endif>>
+Eyes track you from the darkness.  A faint smell of something acrid hangs in the air.  You see steamy breath from the dense thicket.  Wolf is here.<<if $hasMutton and not $hasWolfMask>>  Wolf's glance drifts to the mutton you are carrying.  You can almost see the greedy thoughts running through Wolf's mind.  [[Offer Wolf the mutton|wolf-mutton]].<<endif>>
 
 The Wald thins out to the [[left|wald]].
 <<display "inventory">>

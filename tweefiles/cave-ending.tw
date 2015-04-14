@@ -1,8 +1,8 @@
 /% Link in from cave-interior in fable.tw %/
 ::cave-trapped
-The aurochs lies dead.
+Off to the side of the cave, there are remains from years of carcasses.   [[Take a bone|take-bone]].
 
-There are bones here.  [[Take a bone|take-bone]].
+The aurochs lies dead beneath the deadfall trap.
 
 <<if not $hasBone>>You could use a bone to build a spit to roast some of the fresh meat over a fire.<<else if $hasBone and not $hasSpit>>  [[You construct a roasting spit with bones, starting a fire using the old incantations|passage()][$hasSpit = 1;]].<<else if $hasSpit>>There is a roasting spit here.<<endif>>
 
