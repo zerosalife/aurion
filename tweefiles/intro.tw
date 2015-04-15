@@ -1,5 +1,5 @@
 ::Start
-<<set $debug = true;>>A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
+<<set $debug = 0;>>A [[lone figure|lookFigure]] huddled by a large fire casts creased and undulating shadows on the walls of the [[sacred cave|lookCave]].
 
 <<if ($seenFigure and $seenCave) or $debug>>
 After gathering your courage, you [[approach your teacher|approach]].
@@ -32,10 +32,12 @@ A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their me
 [[« Back|previous()]]
 
 ::gaze-up
-In the flickering firelight, you see painted images of the great beasts of old.  You see a bunch elements from the story.<<set $seenForeshadowing=true>>
+In the flickering firelight, you see painted images of the great beasts of old.  The air of the cave lends them an otherworldly quality, as if the fluffy swirls of sheep, the giant bear, the crafty wolf, and the grazing aurochsen could move on their own.
+
+You've visited this cave many times before to learn: these paintings hold the memory of your people.  These paintings show the tact, craft, cunning that sustained your people to the present day.<<set $seenForeshadowing=true>>
 [[« Back|previous()]]
 
 ::shaman-speak
-The shaman speaks.  [[We go into the story|fable-start]].
-<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 1; $hasSheepMask = 1; $hasMutton = 1; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 1; $hasDriftWood = 0; $hasDeadFall = 1; $caveBearGone = 1;>>
+[[The shaman speaks|fable-start]].
+<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0; $hasDeadFall = 0; $caveBearGone = 0;>>
 /% Link out to fable.tw %/

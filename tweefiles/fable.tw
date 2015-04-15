@@ -1,7 +1,7 @@
 ::fable-start
-The shaman begins the story, telling about [[Aurion|aurion-desc]].
+She starts by testing your knowledge of  [[Aurion|aurion-desc]].
 
-It was spring, Aurion could tell that the rains were coming soon because the [[lingberries]] were budding.
+It was spring, she continues, Aurion could tell that the rains were coming soon because the [[lingberries]] were budding.
 
 After days of walking, wandering away from the people, in search of food, Aurion, worn out and hungry, came across a [[clearing]] at the top of a hill.
 
@@ -25,7 +25,7 @@ The small fruits herald spring.  Their budding foretells rains that bring life b
 [[« Back|previous()]]
 
 :: clearing
-You see <<if $scaredAurochsen>>[[the cliffs|scare-aurochsen]] on your right.<<elseif $tiedRope>>[[the cliffs|rope-cliff]] on your right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on your right.<<endif>>
+You see <<if $scaredAurochsen and not $tiedRope>>[[the cliffs|scare-aurochsen]] on your right.<<elseif $scaredAurochsen and $tiedRope>>[[the cliffs|rope-cliff]] on your right.<<else>>a group of Aurochsen by [[the cliffs|aurochs-cliffs]] on your right.<<endif>>
 
 To your left there are some sheep grazing near a [[watering hole|watering-hole]].
 
@@ -54,37 +54,45 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<display "inventory">>
 
 :: aurochs-cliffs
-Just over a rise, grazing at the near the cliff's edge, you see a herd of aurochsen.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]]<<endif>>
+Just over a rise, grazing at the near the cliff's edge, you see a herd of aurochsen.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]].<<endif>>
 
 There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
 
 ::scare-aurochsen
-<<if visited() == 1>>You stand up at the last second scaring the aurochsen into a stampede with nowhere to go but off the cliff.<<endif>>
-<<if not $hasRope>>There is a curved rock by the cliff's edge.  You think you could tie a rope and descend the cliffside.<<else>>You could [[tie a rope to the curved rock by the cliff's edge|rope-cliff]] to descend the cliffside.<<endif>>
+<<if visited() == 1>>You stand up at the last second scaring the aurochsen into a stampede with nowhere to go but off the cliff.<<endif>><<if not $hasRope>><<if visited() == 1>><br><br><<endif>>There is a curved rock by the cliff's edge.  You think you could secure a rope to it and descend the cliffside.<<else>><<if visited() == 1>><br><br><<endif>>You could [[tie a rope to the curved rock by the cliff's edge|rope-cliff][$tiedRope = 1; $hasRope = 0;]] to descend the cliffside.<<endif>>
 
 There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
-<<if not visited()>><<set $scaredAurochsen = 1;>><<endif>>
+<<if visited() == 1>><<set $scaredAurochsen = 1;>><<endif>>
 
 ::cave-aurochsen
 <<if not $caveBearGone>><<display "cave-bear-scare-aurochsen">><<else if $caveBearGone and not $hasDeadFall>><<display "escape-aurochsen">><<else if $caveBearGone and $hasDeadFall>><<display "deadfall-aurochsen">><<endif>>
 
 ::cave-bear-scare-aurochsen
 The aurochs is scared away by the cavebear.  [[You take off the mask|cave-interior]].
+<<display "inventory">>
 
 ::escape-aurochsen
 The aurochs escapes out of the mouth of the cave.  [[You take off the mask, thinking there may be some way to trap the aurochs inside|cave-interior]].
+<<display "inventory">>
 
 ::deadfall-aurochsen
-The aurochs steps inside the cave entrance, shin glancing off of the bone supporting the deadfall trap.  The log above teeters, then falls, crushing the enormous animal.  [[You take off the mask|cave-trapped]].
+The aurochs steps inside the cave entrance, shin glancing off of the bone supporting the deadfall trap.
+
+The log above teeters, then falls, crushing the enormous animal.
+
+[[You take off the mask|cave-trapped]].
+
+<<display "inventory">>
 /% Link out to cave-ending.tw %/
 
 
 ::rope-cliff
 There is a rope tied to the a curved stone by the edge of the cliff.  [[Descend the cliff|river]].
+
+There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
-<<if not visited()>><<set $tiedRope = 1;>><<endif>>
 /% Link out to cliff-ending.tw %/
 
 :: cave-exterior
@@ -105,7 +113,7 @@ Taking a nearby stone in your hand, you break off a small piece of raw chert <<p
 :: cave-interior
 Off to the side of the cave, there are remains from years of carcasses.   [[Take a bone|take-bone]].
 
-<<if not $caveBearGone>>Cave Bear, a hulking creature, fur matted from hibernating through the long dark, rises when you enter the cave with a long sigh.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br>There is a deadfall trap here.<<endif>>
+<<if not $caveBearGone>>Cave Bear, a hulking creature, fur matted from hibernating through the long dark, rises when you enter the cave with a long sigh.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br><br>There is a deadfall trap here.<<endif>>
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
 

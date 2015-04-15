@@ -2,7 +2,9 @@
 ::river
 There is ancient dessicated drift wood on the bank of the river.<<if $hasRope>>  [[You build a raft with some of the driftwood|passage()][$hasRaft = 1; $hasRope = 0;]].<<else>>  If you had rope you could build a raft with some of the driftwood.<<endif>>
 
-The aurochs lies dead.  The meat on its bones will spoil soon.<<if $hasRaft>><br>There is a raft here.  [[You carefully dress and clean the aurochs, lashing the meat to the raft and set off down the river|river-moral]].<<endif>>
+The aurochs lies dead.  The meat on its bones will spoil soon.<<if $hasRaft>><br><br>There is a raft here.  [[You carefully dress and clean the aurochs, lashing the meat to the raft and set off down the river|river-moral]].<<endif>>
+
+A rope hangs from the cliffside.  [[Ascend the rope|rope-cliff]].
 <<display "inventory">>
 
 ::river-moral

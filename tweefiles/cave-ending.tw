@@ -4,9 +4,8 @@ Off to the side of the cave, there are remains from years of carcasses.   [[Take
 
 The aurochs lies dead beneath the deadfall trap.
 
-<<if not $hasBone>>You could use a bone to build a spit to roast some of the fresh meat over a fire.<<else if $hasBone and not $hasSpit>>  [[You construct a roasting spit with bones, starting a fire using the old incantations|passage()][$hasSpit = 1;]].<<else if $hasSpit>>There is a roasting spit here.<<endif>>
+<<if not $hasBone>>You could use a bone to build a spit to roast some of the fresh meat over a fire.<<else if $hasBone and not $hasSpit>>  [[You construct a roasting spit with bones, starting a fire using the old incantations|passage()][$hasSpit = 1;]].<<else if $hasSpit>>There is a roasting spit here.<<endif>><<if $hasSpit>><br><br>You roast the meat and prepare a litter to [[bring it home to your people|cave-moral]].<<endif>>
 
-<<if $hasSpit>>You roast the meat and prepare a litter to [[bring it home to your people|cave-moral]].<<endif>>
 <<display "inventory">>
 
 ::cave-moral
