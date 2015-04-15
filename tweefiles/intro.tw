@@ -24,20 +24,18 @@ You would have smelled the beast long before entering the cave.
 
 The shape is unmistakably an aurochs, but it moves along the domed wall of the cave.  Your [[gaze is drawn up|gaze-up]].
 <<if $seenForeshadowing or $debug>>
-Before long the old shaman begins to [[speak|shaman-speak]].
+Before long the old shaman begins to [[speak|fable-start]].
 <<endif>>
+<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0; $hasDeadFall = 0; $caveBearGone = 0;>>
+/% Link out to fable.tw %/
+
 
 ::aurochs
-A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their meat sustains the people.
+A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their meat sustains the People.
 [[« Back|previous()]]
 
 ::gaze-up
 In the flickering firelight, you see painted images of the great beasts of old.  The air of the cave lends them an otherworldly quality, as if the fluffy swirls of sheep, the giant bear, the crafty wolf, and the grazing aurochsen could move on their own.
 
-You've visited this cave many times before to learn: these paintings hold the memory of your people.  These paintings show the tact, craft, cunning that sustained your people to the present day.<<set $seenForeshadowing=true>>
+You've visited this cave many times before to learn: these paintings hold the memory of your People.  These paintings show the tact, craft, cunning that sustained your People to the present day.<<set $seenForeshadowing=true>>
 [[« Back|previous()]]
-
-::shaman-speak
-[[The shaman speaks|fable-start]].
-<<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0; $hasDeadFall = 0; $caveBearGone = 0;>>
-/% Link out to fable.tw %/

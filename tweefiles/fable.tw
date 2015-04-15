@@ -3,7 +3,7 @@ She starts by testing your knowledge of  [[Aurion|aurion-desc]].
 
 It was spring, she continues, Aurion could tell that the rains were coming soon because the [[lingberries]] were budding.
 
-After days of walking, wandering away from the people, in search of food, Aurion, worn out and hungry, came across a [[clearing]] at the top of a hill.
+After days of walking in search of food, wandering far away from the People, Aurion, worn out and hungry, came across a [[clearing]] at the top of a hill.
 
 
 ::aurion-desc
@@ -21,7 +21,9 @@ You can't be sure but you think the shape matches the drawings on the dome of th
 [[« Back|fable-start]]
 
 ::lingberries
-The small fruits herald spring.  Their budding foretells rains that bring life back to the world following the cold death of winter.  During the winter, their hard shells make for poor sustenance, but the spring rains fill them with juice.  They are a sweet treat if you pick them after a storm.
+These small fruits herald spring.  Their budding foretells rains that bring life back to the world following the cold death of winter.
+
+During the winter, their hard shells make for poor sustenance, but the spring rains fill them with juice.  They are a sweet treat if you pick them after a storm.
 [[« Back|previous()]]
 
 :: clearing
@@ -49,12 +51,12 @@ You pick some some reeds, <<print either("carefully avoiding the sharp points of
 <<set $hasReeds = 1;>>
 
 ::hunt-sheep
-<<if not $hasMutton>>You carve and dress the sheep.  [[Take the mutton|passage()][$hasMutton = 1;]].<<endif>><<if $hasMutton>>The unused organs of the sheep remain.<<endif>><<if not $hasSheepMask>><br>Using the old ways, you prepare a Sheep Mask from the remains.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
+<<if not $hasMutton>>You carve and dress the sheep.  [[Take the mutton|passage()][$hasMutton = 1;]].<<endif>><<if $hasMutton>>The unused organs of the sheep remain.<<endif>><<if not $hasSheepMask>><br><br>Using the old ways, you prepare a Sheep Mask from the remains.  [[Take the Sheep Mask|passage()][$hasSheepMask = 1;]]<<endif>>
 [[« Back|previous()]]
 <<display "inventory">>
 
 :: aurochs-cliffs
-Just over a rise, grazing at the near the cliff's edge, you see a herd of aurochsen.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]].<<endif>>
+Just over a rise, grazing near the cliff's edge, you see a herd of aurochsen.  <<if $hasSpear>>Even if you could get close enough to the herd without spooking them, your spear is not strong enough to pierce the aurochsen's tough hide.<<endif>><<if $hasWolfMask>><br><br>Donning the Wolf Mask you [[sneak up on the aurochsen|scare-aurochsen]].<<endif>><<if $hasSheepMask>><br><br>Donning the Sheep Mask you [[coax the aurochsen toward the cave|cave-aurochsen]].<<endif>>
 
 There is a path down the rise back to the [[clearing]].
 <<display "inventory">>
@@ -113,7 +115,8 @@ Taking a nearby stone in your hand, you break off a small piece of raw chert <<p
 :: cave-interior
 Off to the side of the cave, there are remains from years of carcasses.   [[Take a bone|take-bone]].
 
-<<if not $caveBearGone>>Cave Bear, a hulking creature, fur matted from hibernating through the long dark, rises when you enter the cave with a long sigh.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br><br>There is a deadfall trap here.<<endif>>
+<<if not $caveBearGone>>Cave Bear, a hulking creature, fur matted from hibernating through the long dark, rises when you enter the cave with a long sigh.<<endif>><<if not $caveBearGone and $hasMutton>>  Cave Bear drools, eyeing the mutton you have.  [[Offer Cave Bear the mutton|bear-mutton][$hasMutton = 0; $caveBearGone = 1;]]<<endif>><<if $hasLog and $hasBone and not $hasDeadFall>><br><br>You see a ledge that would be perfect to [[construct a deadfall trap here|passage()][$hasDeadFall = 1; $hasLog = 0; $hasBone = 0;]].<<endif>><<if $hasDeadFall>><br><br>There is a deadfall trap here.<<endif>>
+
 [[Leave the cave|cave-exterior]].
 <<display "inventory">>
 
@@ -128,7 +131,6 @@ Cave Bear thanks you and takes the mutton.  "Now I have enough energy to go out 
 
 [[« Back|previous()]]
 <<display "inventory">>
-<<set $hasMutton = 0;>>
 
 
 :: wald
@@ -155,7 +157,7 @@ Using the hand axe, you cut down one of the old trees.
 
 
 :: deep-wald
-Eyes track you from the darkness.  A faint smell of something acrid hangs in the air.  You see steamy breath from the dense thicket.  Wolf is here.<<if $hasMutton and not $hasWolfMask>>  Wolf's glance drifts to the mutton you are carrying.  You can almost see the greedy thoughts running through Wolf's mind.  [[Offer Wolf the mutton|wolf-mutton]].<<endif>>
+Eyes track you from the darkness.  A faint smell of something acrid hangs in the air.  You see steamy breath from the dense thicket.  Wolf is here.<<if $hasMutton and not $hasWolfMask>><br><br>Wolf's glance drifts to the mutton you are carrying.  You can almost see the greedy thoughts running through Wolf's mind.  [[Offer Wolf the mutton|wolf-mutton]].<<else>><br><br>"You look malnourished," Wolf says, "As am I.  I may be able to help you if you bring me some mutton to quench my hunger."<<endif>>
 
 The Wald thins out to the [[left|wald]].
 <<display "inventory">>
