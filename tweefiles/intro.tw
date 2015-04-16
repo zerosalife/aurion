@@ -6,7 +6,9 @@ After gathering your courage, you [[approach your teacher|approach]].
 <<endif>>
 
 ::lookFigure
-You see the figure.  The shadows don't obscure the edges of a large mask.  Although you can't see her face, you know your mentor sits by the fire, waiting for you to approach.<<set $seenFigure = 1>>
+Seated beneath a domed ceiling deep in the cave next to a roaring fire you scrutinize the figure.  The shadows don't obscure the edges of a large mask.
+
+Although you can't see her face, you know your mentor sits by the fire, waiting for you to approach.<<set $seenFigure = 1>>
 [[« Back|previous()]]
 
 ::lookCave
@@ -14,7 +16,9 @@ You see craggy walls of the cave give way to smooth, chiseled stone at about sho
 [[« Back|previous()]]
 
 ::approach
-You approach your teacher.  She calmly regards you in silence.  You are reluctant to meet her gaze, afraid that she is testing your patience.  She subtly moves an arm, gesturing for you to sit by the fire.
+She calmly regards you in silence as you walk over.  You are reluctant to meet her gaze, afraid that she is testing your patience.
+
+She subtly moves an arm, gesturing for you to sit by the fire.
 
 You sit down.  Out of the corner of your eye, you catch movement among the shadows.
 
@@ -29,9 +33,8 @@ Before long the old shaman begins to [[speak|fable-start]].
 <<set $hasReeds = 0; $hasRope = 0; $hasSpear = 0; $hasSheepMask = 0; $hasMutton = 0; $hasStick = 0; $hasLog = 0; $hasChert = 0; $hasSpearHead = 0; $hasHandAxe = 0; $hasBone = 0; $hasWolfMask = 0; $hasDriftWood = 0; $hasDeadFall = 0; $caveBearGone = 0;>>
 /% Link out to fable.tw %/
 
-
 ::aurochs
-A horned great beast.  One of the four-leggeds.  It has cloved hooves.  Their meat sustains the People.
+A horned great beast.  One of the four-leggeds.  It has cloven hooves.  Their meat sustains the People.
 [[« Back|previous()]]
 
 ::gaze-up
