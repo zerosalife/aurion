@@ -1,8 +1,15 @@
 * Aurion and the Aurochs
-A text adventure.
+*Aurion and the Aurochs* is a text adventure about how the fables we
+tell inform the culture we create.  Collect and combine a variety of
+items in the classic adventure game style!  Hunt mysterious
+antediluvian creatures!  Go into caves!
+
+It is written in Twine and created for #adventurejam.
 * Created Using Artisanal Macros From
 
 [[http://eturnerx.com/fot/The%2520Future%2520of%2520Twine.html#14][http://eturnerx.com/fot/The%20Future%20of%20Twine.html#14]]
+* Logo Background Courtesy of @Pentadact
+A starscape from the upcoming Heat Signature
 * Microscope
 ** Framing story f/ old shaman & initiate ✓
 ** Aurion looking for food after long dark ×
